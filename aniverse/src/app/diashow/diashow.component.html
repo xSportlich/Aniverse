@@ -1,22 +1,11 @@
-<!-- <div class="content">
-  <div class="diashow" aria-hidden="true">
-    @for (item of animeData(); track item) {
-      <img style="--t:2s" class="img" [src]="item.images.jpg.image_url" alt="img">
-    }
-    @for (item of animeData(); track item) {
-      <img style="--t:2s" class="img" [src]="item.images.jpg.image_url" alt="img">
-    }
-  </div>
-</div> -->
+
 
 <div class="content">
   <div class="diashow">
-    <!-- Erste Bildgruppe -->
     @for (item of animeData(); track item) {
       <img class="img" [src]="item.images.jpg.image_url" alt="img">
     }
-    
-    <!-- Zweite Bildgruppe für nahtlose Wiederholung -->
+
     @for (item of animeData(); track item) {
       <img class="img" [src]="item.images.jpg.image_url" alt="img">
     }

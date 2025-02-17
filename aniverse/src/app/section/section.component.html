@@ -1,0 +1,8 @@
+<div class="container roboto">
+  <div class="categorie">Top Anime</div>
+  <div class="content">
+    @for(item of animeData(); track item) {
+    <a href=""><img class="img" [src]="item.images.jpg.image_url" alt="img"/></a>
+    }
+  </div>
+</div>

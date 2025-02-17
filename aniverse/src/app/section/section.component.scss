@@ -1,0 +1,20 @@
+@import url('./../../styles.scss');
+
+
+.container {
+    margin-top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    .categorie {
+        display: flex;
+        font-size: 30px;
+        color: white;
+    }
+    .content {
+        display: flex;
+        gap: 20px;
+    }
+}
