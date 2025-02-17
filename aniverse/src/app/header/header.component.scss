@@ -1,0 +1,28 @@
+@import url('./../../styles.scss');
+
+
+.header {
+    height: 80px;
+    width: 100vw;
+    background-color: rgb(4, 8, 19);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding-left: 30px;
+    
+        img {
+            height: 40px;
+            width: 66px;
+        }
+        .title {
+            color: white;
+            font-size: 30px;
+            font-weight: 800;
+        }
+    }
+}
