@@ -1,8 +1,10 @@
 <div class="container roboto">
   <div class="categorie">Top Anime</div>
-  <div class="content">
-    @for(item of animeData(); track item) {
-    <a href=""><img class="img" [src]="item.images.jpg.image_url" alt="img"/></a>
+  <div id="scroll" class="content">
+    <img (click)="clickLeft()" class="arrow_left" src="./assets/img/arrow_back_ios_26dp_RGB(248, 135, 5)_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+    @for(item of animeData().slice(0, 14); track item) {
+    <img class="img" [src]="item.images.jpg.image_url" alt="img"/>
     }
+    <img (click)="clickRight()" class="arrow_right" src="./assets/img/arrow_back_ios_26dp_RGB(248, 135, 5)_FILL0_wght400_GRAD0_opsz24.svg" alt="">
   </div>
 </div>

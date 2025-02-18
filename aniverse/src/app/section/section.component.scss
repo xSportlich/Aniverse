@@ -5,16 +5,51 @@
     margin-top: 60px;
     padding-left: 100px;
     padding-right: 100px;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     gap: 20px;
+
     .categorie {
         display: flex;
         font-size: 30px;
         color: white;
     }
+
     .content {
         display: flex;
+        align-items: center;
         gap: 20px;
+        overflow: scroll;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+
+        .arrow_left {
+            position: absolute;
+            left: 50px;
+            height: 50px;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+
+        .arrow_right {
+            position: absolute;
+            right: 50px;
+            height: 50px;
+            transform: rotate(180deg);
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2) rotate(180deg);
+
+            }
+        }
     }
+}
+
+.img {
+    height: 240px;
 }
