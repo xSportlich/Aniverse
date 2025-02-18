@@ -13,4 +13,5 @@ import { SectionComponent } from "./section/section.component";
 })
 export class AppComponent {
   title = 'aniverse';
+  animeArray: string[] = ['https://api.jikan.moe/v4/top/anime?type=ona', 'https://api.jikan.moe/v4/seasons/now?sfw']
 }
