@@ -1,10 +1,9 @@
-import { CommonModule, SlicePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import {
   Component,
   DestroyRef,
   inject,
-  Input,
   input,
   OnInit,
   signal,
@@ -20,30 +19,28 @@ import {
 export class SectionComponent implements OnInit {
   http = inject(HttpClient);
   animeData = signal<[] | any>([]);
-  animeArray = input<string>('');
+  animeArray = input<{ url: string, id: string, title: string } | any>();
   destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
-     console.log(this.animeArray());
-     
-      const sub = this.http.get<{ data: [] }>(this.animeArray()).subscribe({
-        next: (result) => {
-          console.log(result);
-          this.animeData.set(result.data);
-        },
-      });
-      this.destroyRef.onDestroy(() => {
-        sub.unsubscribe()
-      })
+    const sub = this.http.get<{ data: [] }>(this.animeArray().url).subscribe({
+      next: (result) => {
+        console.log(result);
+        this.animeData.set(result.data);
+      },
+    });
+    this.destroyRef.onDestroy(() => {
+      sub.unsubscribe();
+    });
   }
 
-  clickRight() {
-    const container: any = document.getElementById('scroll');
+  clickRight(id: string) {
+    const container: any = document.getElementById(`scroll_${id}`);
     container.scrollLeft += 250;
   }
 
-  clickLeft() {
-    const container: any = document.getElementById('scroll');
+  clickLeft(id: string) {
+    const container: any = document.getElementById(`scroll_${id}`);
     container.scrollLeft -= 250;
   }
 }

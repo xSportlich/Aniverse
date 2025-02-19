@@ -4,6 +4,6 @@
 
 <app-categories></app-categories>
 
-@for (item of animeArray; track $index) {
+@for (item of animeArray; track item) {
     <app-section [animeArray]="item"></app-section>
 }

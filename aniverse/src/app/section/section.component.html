@@ -1,10 +1,10 @@
 <div class="container roboto">
-  <div class="categorie">Top Anime</div>
-  <div id="scroll" class="content">
-    <img (click)="clickLeft()" class="arrow_left" src="./assets/img/arrow_back_ios_26dp_RGB(248, 135, 5)_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+  <div class="categorie">{{animeArray().title}}</div>
+  <div [id]="'scroll_' + animeArray().id" class="content">
+    <img (click)="clickLeft(animeArray().id)" class="arrow_left" src="./assets/img/arrow_back_ios_26dp_RGB(248, 135, 5)_FILL0_wght400_GRAD0_opsz24.svg" alt="">
     @for(item of animeData().slice(0, 14); track item) {
     <img class="img" [src]="item.images.jpg.image_url" alt="img"/>
     }
-    <img (click)="clickRight()" class="arrow_right" src="./assets/img/arrow_back_ios_26dp_RGB(248, 135, 5)_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+    <img (click)="clickRight(animeArray().id)" class="arrow_right" src="./assets/img/arrow_back_ios_26dp_RGB(248, 135, 5)_FILL0_wght400_GRAD0_opsz24.svg" alt="">
   </div>
 </div>
